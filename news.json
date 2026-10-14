@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "items": [
+    {
+      "id": "2026-10-14-v210",
+      "date": "2026-10-14",
+      "tag": "update",
+      "title": "DMC 2.1.0: auto-update, news and a faster way to reach you",
+      "body": "DMC now checks for new versions on start, downloads them quietly and asks you when to install. Updates are signature-checked; anything that fails the check is deleted and your install stays untouched.",
+      "url": "https://github.com/dechrisdera-svg/dechrismodcompiler/releases"
+    },
+    {
+      "id": "2026-10-14-beta",
+      "date": "2026-10-13",
+      "tag": "notice",
+      "title": "Still in beta: please report what breaks",
+      "body": "DMC is a beta. Scripts compiled for GTA SA Android and PC CLEO 4/5 are checked by automated tests, but not every script has been run in the game yet. If a compiled script misbehaves in game, open an issue and attach your script and %APPDATA%\\DechrisModCompiler\\dmc.log.",
+      "url": "https://github.com/dechrisdera-svg/dechrismodcompiler/issues"
+    },
+    {
+      "id": "2026-10-12-tips",
+      "date": "2026-10-12",
+      "tag": "tip",
+      "title": "Tip: F6 compiles, F5 compiles and pushes to your phone",
+      "body": "Connect the phone with USB debugging on, press F5, and the .csi is copied straight into the CLEO folder. Use Build > Decompile to open any compiled .csi as readable source.",
+      "url": ""
+    }
+  ]
+}

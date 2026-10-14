@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "ads": {
+    "enabled": true,
+    "rotate_seconds": 25,
+    "items": [
+      {
+        "id": "ad-news",
+        "text": "DechrisModCompiler: new versions install themselves. Click for the latest release notes",
+        "url": "https://github.com/dechrisdera-svg/dechrismodcompiler/releases",
+        "bg": "#1b3a5c",
+        "fg": "#ffffff"
+      },
+      {
+        "id": "ad-feedback",
+        "text": "Found a bug or want a feature? Tell us on GitHub",
+        "url": "https://github.com/dechrisdera-svg/dechrismodcompiler/issues",
+        "bg": "#14304d",
+        "fg": "#cfe8ff"
+      }
+    ]
+  }
+}

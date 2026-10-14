@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "version": "2.1.1",
+  "date": "2026-10-14",
+  "url": "https://github.com/dechrisdera-svg/dechrismodcompiler/releases/download/v2.1.1/DMC_Setup.exe",
+  "size": 10707882,
+  "sha256": "93008f21d6cdae6ad641f4ddfd0415d7d6cecf9108183b4f7da29f5eed871373",
+  "sig": "a4185a8c61e4827b58a38a419c6951b42794d0f51825d14d7a81ab851dd1bbae",
+  "notes": [
+    "FIX Repeating 'Unexpected error: _queue.Empty' popups caused by the update/news checker",
+    "FIX An error popup can no longer pile up: the same error is shown once, the rest go to dmc.log"
+  ]
+}

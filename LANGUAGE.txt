@@ -1,0 +1,43 @@
+LANGUAGE GUIDE (DMC syntax, Sanny Builder 4 style)
+
+{$CLEO .csi}                      output extension (target default if omitted)
+{$INCLUDE file.txt}               include another file   ({$INCLUDE_ONCE ...} only once)
+{$GLOBALS 5000}                   base index for named globals ($name)
+script_name 'NAME'     wait 0     0AB1: 1 2 3   (raw opcode)
+
+Variables
+  0@  1@ ... 31@  (32@ 33@ = TIMERA/TIMERB)       $123  global by number
+  int a, b = 3        float f = 1.5       Char ped        (class types allow  ped.IsDead() )
+  int arr[10]   arr[i] = 5                          Sanny form:  5@(6@,10i)
+  const SIZE = 10       var $g: int       var 5@: float   (type hint for numbered var)
+
+Assignments        a = 5   a += 2   a -= b   a *= 2.0   a /= 2   f =# i   (=# converts int<->float)
+                   c = a + b          (one operator; a different target needs a temp variable)
+Commands           Class.Member(args)      x y z = Char.GetCoordinates(ped)      not Char.IsDead(ped)
+Conditions         a > b   a >= b   a < b   a <= b   a == b   a != b
+
+Control flow
+  if cond then ... else ... end          if and / if or  (conditions on following lines) then ... end
+  while cond ... end    while true ... end    repeat ... until cond
+  for i = 0 to 9 [step 2] ... end       for i = 9 downto 0 ... end
+  break    continue
+  Old style still works:   if  cond  jf @LABEL
+  :LABEL    jump @LABEL    gosub @LABEL    return    terminate_this_script
+  hex 4E 00 end            raw bytes
+
+Comments:  // line     /* block */
+
+
+SHORTCUTS
+F6 Compile            F5 Compile + push to phone / game
+Ctrl+Shift+B Compile all open tabs
+Ctrl+N New   Ctrl+O Open   Ctrl+S Save   Ctrl+Shift+S Save as   Ctrl+W Close tab
+Ctrl+Tab / Ctrl+Shift+Tab  Next / previous tab
+Ctrl+F Find   Ctrl+H Replace   Ctrl+Shift+F Find in files   Ctrl+G Go to line
+F12 / Ctrl+Click  Go to definition (label, variable, constant)
+Shift+F12 Find all references          F2 Rename label / variable
+Ctrl+/ Comment toggle    Tab / Shift+Tab Indent / dedent    Ctrl+Space Autocomplete
+Ctrl+Shift+I Auto-format document     Ctrl+= / Ctrl+- / Ctrl+0  Zoom
+Ctrl+Shift+[ / ]  Fold / unfold all   Ctrl+B Toggle side panel
+Ctrl+Shift+D Decompile a compiled script (.csi/.csa/.cs/.cm)
+Type a snippet name (main, loop, weapon, cheat, for ...) then Tab.

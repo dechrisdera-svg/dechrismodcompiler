@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b12">
+<meta name="description" content="DechrisModCompiler (DMC) — a focused script editor and compiler for GTA San Andreas CLEO scripts on Android and PC.">
+<meta property="og:title" content="DechrisModCompiler — Build scripts. Keep moving.">
+<meta property="og:description" content="A focused workspace for GTA San Andreas CLEO scripts. Free beta for Windows modders.">
+<meta property="og:type" content="website">
+<title>DechrisModCompiler — Build scripts. Keep moving.</title>
+<style>
+:root{color-scheme:dark;--bg:#080b12;--panel:#0e1420;--panel2:#111a29;--text:#f3f6fc;--muted:#9aa8bc;--line:#202c3e;--accent:#8cf5c7;--accent2:#6de4ee;--danger:#ffb8b8;--radius:18px;--max:1120px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:radial-gradient(ellipse at 75% -20%,rgba(80,127,164,.17),transparent 45%),var(--bg);color:var(--text);font:15px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent2);outline-offset:4px}
+.container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(8,11,18,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(143,163,190,.13)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:inline-flex;align-items:center;gap:11px;font-weight:760;letter-spacing:-.035em}
+.brand-mark{width:34px;height:34px;border:1px solid rgba(140,245,199,.48);border-radius:11px;display:grid;place-items:center;color:var(--accent);background:rgba(140,245,199,.07);font-size:12px;font-weight:900;letter-spacing:-.08em}
+.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:650;line-height:1.3}
+.nav-links{display:flex;align-items:center;gap:28px;color:var(--muted);font-size:13px}
+.nav-links a:hover{color:var(--text)}
+.nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:11px;padding:11px 16px;font-weight:750;font-size:13px;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.nav-cta,.button-primary{background:var(--accent);color:#07130f;border:1px solid var(--accent)}
+.nav-cta:hover,.button:hover{transform:translateY(-2px)}
+.hero{padding:92px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:54px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 15px rgba(140,245,199,.7)}
+h1{font-size:clamp(42px,6vw,72px);line-height:1.02;letter-spacing:-.065em;margin:22px 0 20px;max-width:680px}
+.gradient-text{color:var(--accent)}
+.hero-copy{font-size:17px;line-height:1.8;color:var(--muted);max-width:570px;margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.button{min-height:46px;padding:13px 18px}
+.button-secondary{border:1px solid #2b394d;background:rgba(255,255,255,.025);color:var(--text)}
+.button-secondary:hover{border-color:#63768e;background:rgba(255,255,255,.05)}
+.button .arrow{font-size:17px;line-height:1}
+.hero-note{font-size:12px;color:var(--muted);margin-top:17px}
+.hero-note strong{color:#dbe5f2;font-weight:650}
+.preview{position:relative;border:1px solid #27364a;border-radius:20px;overflow:hidden;background:linear-gradient(145deg,#111b2b,#0b101a 70%);box-shadow:0 30px 100px rgba(0,0,0,.3)}
+.preview:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:rgba(109,228,238,.08);filter:blur(50px);right:-90px;top:-110px;pointer-events:none}
+.window-bar{height:48px;display:flex;align-items:center;gap:7px;padding:0 16px;border-bottom:1px solid var(--line);color:#73849a;font-size:11px}
+.window-dot{width:7px;height:7px;border-radius:50%;background:#3a4b60}
+.window-label{margin-left:auto;letter-spacing:.1em;text-transform:uppercase;font-size:9px}
+.editor{display:grid;grid-template-columns:42px 1fr;padding:22px 18px 25px;font:12px/2 "SFMono-Regular",Consolas,monospace;min-height:270px}
+.line-numbers{color:#52647c;text-align:right;padding-right:16px;user-select:none}
+.code-lines{white-space:pre-wrap;color:#c5d2e4}
+.code-comment{color:#6f849e}.code-key{color:#8cf5c7}.code-string{color:#8ddcf0}.code-function{color:#e5c7ff}
+.preview-footer{border-top:1px solid var(--line);padding:13px 17px;display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:10px;gap:10px}
+.status{display:inline-flex;align-items:center;gap:7px;color:var(--accent)}
+.section{padding:70px 0}
+.section-head{max-width:650px;margin-bottom:30px}
+.kicker{color:var(--accent);font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}
+h2{font-size:clamp(28px,4vw,40px);line-height:1.12;letter-spacing:-.045em;margin:12px 0}
+.section-head p{color:var(--muted);margin:10px 0 0;max-width:580px}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feature{padding:23px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(17,26,41,.8),rgba(12,17,27,.72));min-height:180px}
+.feature-icon{width:38px;height:38px;display:grid;place-items:center;border:1px solid #2b3c50;border-radius:12px;color:var(--accent);margin-bottom:19px;font-size:16px}
+.feature h3{margin:0 0 8px;font-size:16px;letter-spacing:-.02em}
+.feature p{margin:0;color:var(--muted);font-size:13px}
+.release-section{padding:24px 0 80px}
+.release-card{display:grid;grid-template-columns:1fr auto;align-items:center;gap:26px;padding:28px;border:1px solid #2a3b4d;border-radius:20px;background:linear-gradient(110deg,rgba(140,245,199,.065),rgba(14,20,32,.8) 48%)}
+.release-card h2{font-size:25px;margin:9px 0}
+.release-card p{color:var(--muted);margin:0;font-size:13px}
+.release-stats{display:flex;flex-wrap:wrap;gap:24px;margin-top:20px}
+.stat span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.11em}
+.stat strong{font-size:17px;display:block;margin-top:2px}
+.release-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px;min-width:205px}
+.release-actions .button{white-space:nowrap}
+.small-link{text-align:center;color:var(--muted);font-size:12px;padding:4px}
+.small-link:hover{color:var(--text)}
+.helper{font-size:12px;color:var(--muted);margin:13px 0 0}
+.news-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.news-item{padding:20px;border:1px solid var(--line);border-radius:15px;background:rgba(14,20,32,.72)}
+.news-meta{font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.13em}
+.news-item h3{font-size:16px;line-height:1.4;margin:8px 0}
+.news-item p{font-size:13px;color:var(--muted);margin:0}
+.news-item a{display:inline-block;color:var(--accent);font-size:12px;font-weight:700;margin-top:12px}
+.empty-state{padding:20px;border:1px dashed #2a394b;border-radius:14px;color:var(--muted);font-size:13px;grid-column:1/-1}
+footer{border-top:1px solid var(--line);padding:26px 0 35px;color:var(--muted);font-size:12px}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+footer a:hover{color:var(--text)}
+[hidden]{display:none!important}
+@media(max-width:800px){.hero{padding:66px 0 52px}.hero-grid{grid-template-columns:1fr;gap:38px}.preview{max-width:620px}.feature-grid{grid-template-columns:repeat(2,1fr)}.release-card{grid-template-columns:1fr}.release-actions{flex-direction:row;flex-wrap:wrap}.release-actions .button{flex:1}.nav-links{gap:16px}}
+@media(max-width:560px){.container{width:min(var(--max),calc(100% - 28px))}.nav{height:64px}.brand{font-size:13px}.nav-links a:not(.nav-cta){display:none}.nav-cta{padding:9px 11px;font-size:12px}.hero{padding:55px 0 42px}h1{font-size:clamp(42px,13vw,60px)}.hero-copy{font-size:15px}.feature-grid,.news-list{grid-template-columns:1fr}.feature{min-height:0}.section{padding:52px 0}.release-card{padding:21px}.release-actions{flex-direction:column}.release-stats{gap:18px}.editor{font-size:10px;padding:17px 12px;grid-template-columns:30px 1fr}.line-numbers{padding-right:10px}.preview-footer{font-size:9px}.footer-row{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="brand" href="#" aria-label="DechrisModCompiler home">
+      <span class="brand-mark" aria-hidden="true">DMC</span>
+      <span>DechrisModCompiler<small>MODDING TOOLKIT</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#updates">Updates</a>
+      <a href="https://github.com/dechrisdera-svg/dechrismodcompiler/issues" target="_blank" rel="noopener noreferrer">Support ↗</a>
+      <a class="nav-cta" href="#download">Get DMC <span aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><span class="pulse" aria-hidden="true"></span> Free beta · Windows</div>
+        <h1>Build scripts.<br><span class="gradient-text">Keep moving.</span></h1>
+        <p class="hero-copy">A focused workspace for GTA San Andreas CLEO scripts. Write, compile and inspect your scripts with less friction and a cleaner workflow.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#download">Download DMC <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="https://github.com/dechrisdera-svg/dechrismodcompiler" target="_blank" rel="noopener noreferrer">Explore on GitHub</a>
+        </div>
+        <p class="hero-note"><strong>For Android CLEO and PC CLEO 4/5 workflows.</strong><br>Check release notes and compatibility before installing.</p>
+      </div>
+      <div class="preview" aria-label="Decorative preview of a CLEO script editor">
+        <div class="window-bar"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span><span class="window-label">DMC / script editor</span></div>
+        <div class="editor" aria-hidden="true">
+          <div class="line-numbers">01<br>02<br>03<br>04<br>05<br>06<br>07<br>08<br>09</div>
+          <div class="code-lines"><span class="code-comment">// Your next idea starts here</span>
+<span class="code-key">{$CLEO .cs}</span>
+<span class="code-comment">// Set up your script</span>
+<span class="code-key">0000:</span> <span class="code-string">"MY_SCRIPT"</span>
+<span class="code-comment">// Add logic. Test. Refine.</span>
+<span class="code-function">wait</span> <span class="code-string">0</span>
+<span class="code-key">:MAIN_LOOP</span>
+<span class="code-function">wait</span> <span class="code-string">0</span>
+<span class="code-key">jump</span> <span class="code-string">@MAIN_LOOP</span></div>
+        </div>
+        <div class="preview-footer"><span class="status"><span class="pulse"></span> Workspace ready</span><span>LIGHTWEIGHT BY DESIGN</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Made for the workflow</div>
+        <h2>Tools that stay out of your way.</h2>
+        <p>Keep the interface simple and the focus on your scripts. DMC is in beta, so features and compatibility may evolve between releases.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature"><div class="feature-icon" aria-hidden="true">⌘</div><h3>Script editing</h3><p>A dedicated place to work on GTA San Andreas CLEO script files.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">⚙</div><h3>Compile workflow</h3><p>Designed to bring script editing and compilation into one focused tool.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">⌕</div><h3>Inspect & debug</h3><p>Decompiler and error-checking capabilities are part of the DMC toolset.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">↗</div><h3>Android + PC</h3><p>Built around Android CLEO and PC CLEO 4/5 scripting workflows.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">◈</div><h3>Community-driven</h3><p>Browse the source, report issues and follow progress on GitHub.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">○</div><h3>Free beta</h3><p>Try the current release and share clear feedback as development continues.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="release-section" id="download">
+    <div class="container">
+      <div class="release-card">
+        <div>
+          <div class="eyebrow"><span class="pulse" aria-hidden="true"></span> Latest release</div>
+          <h2>Ready to get started?</h2>
+          <p id="release-message" role="status" aria-live="polite">Checking GitHub for the latest Windows release…</p>
+          <div class="release-stats">
+            <div class="stat"><span>Version</span><strong id="ver">Loading…</strong></div>
+            <div class="stat"><span>Total downloads</span><strong id="cnt">Loading…</strong></div>
+            <div class="stat"><span>Installer size</span><strong id="size">Loading…</strong></div>
+          </div>
+          <p class="helper" id="date"></p>
+        </div>
+        <div class="release-actions">
+          <a class="button button-primary" id="dl" href="https://github.com/dechrisdera-svg/dechrismodcompiler/releases/latest" target="_blank" rel="noopener noreferrer">View latest release <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="https://github.com/dechrisdera-svg/dechrismodcompiler/releases" target="_blank" rel="noopener noreferrer">All releases</a>
+        </div>
+      </div>
+      <p class="helper">Windows may warn that the publisher is unknown if the installer is not code-signed. Only proceed if you trust the source and have verified the release. Never bypass a warning for a file you cannot verify.</p>
+    </div>
+  </section>
+
+  <section class="section" id="updates">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">From the project</div>
+        <h2>Latest news.</h2>
+        <p>Updates from the DMC project repository.</p>
+      </div>
+      <div class="news-list" id="news" aria-live="polite"><div class="empty-state">Loading project updates…</div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© <span id="year"></span> DechrisModCompiler. Community project, currently in beta.</span>
+    <div class="footer-links">
+      <a href="https://github.com/dechrisdera-svg/dechrismodcompiler" target="_blank" rel="noopener noreferrer">Source code ↗</a>
+      <a href="https://github.com/dechrisdera-svg/dechrismodcompiler/issues" target="_blank" rel="noopener noreferrer">Report a bug ↗</a>
+      <a href="https://library.sannybuilder.com/" target="_blank" rel="noopener noreferrer">Sanny Builder Library ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var REPO = "dechrisdera-svg/dechrismodcompiler";
+  var RAW = "https://raw.githubusercontent.com/" + REPO + "/main/";
+  var $ = function (id) { return document.getElementById(id); };
+  $("year").textContent = new Date().getFullYear();
+
+  function getJSON(url) {
+    return fetch(url, { cache: "no-store", headers: { "Accept": "application/json" } }).then(function (r) {
+      if (!r.ok) throw new Error("Request failed: " + r.status);
+      return r.json();
+    });
+  }
+  function safeUrl(value) {
+    try {
+      var url = new URL(value, window.location.href);
+      return (url.protocol === "https:" || url.protocol === "http:") ? url.href : "";
+    } catch (_) { return ""; }
+  }
+  function formatSize(bytes) {
+    var n = Number(bytes);
+    if (!Number.isFinite(n) || n <= 0) return "—";
+    return (n / 1048576).toFixed(1) + " MB";
+  }
+  function displayRelease(version, url, size, date) {
+    $("ver").textContent = version || "—";
+    $("size").textContent = formatSize(size);
+    $("date").textContent = date ? "Published " + date : "";
+    var validUrl = safeUrl(url);
+    if (validUrl) {
+      $("dl").href = validUrl;
+      $("dl").innerHTML = 'Download for Windows <span aria-hidden="true">↗</span>';
+      $("dl").setAttribute("target", "_blank");
+      $("release-message").textContent = "The latest Windows installer is ready from GitHub.";
+    } else {
+      $("release-message").textContent = "No direct Windows installer was found. Open the release page to see available files.";
+    }
+  }
+
+  getJSON(RAW + "latest.json?t=" + Math.floor(Date.now() / 60000))
+    .then(function (data) {
+      displayRelease(data.version, data.url, data.size, data.date);
+    })
+    .catch(function () {
+      return getJSON("https://api.github.com/repos/" + REPO + "/releases/latest").then(function (release) {
+        var assets = Array.isArray(release.assets) ? release.assets : [];
+        var asset = assets.find(function (item) { return /\.exe$/i.test(item.name || ""); });
+        displayRelease((release.tag_name || "").replace(/^v/i, ""), asset && asset.browser_download_url, asset && asset.size, (release.published_at || "").slice(0, 10));
+      });
+    })
+    .catch(function () {
+      $("ver").textContent = "—";
+      $("size").textContent = "—";
+      $("release-message").textContent = "Release details could not be loaded right now. You can still open GitHub and download a release manually.";
+    });
+
+  getJSON("https://api.github.com/repos/" + REPO + "/releases?per_page=100")
+    .then(function (releases) {
+      var count = 0;
+      (Array.isArray(releases) ? releases : []).forEach(function (release) {
+        (release.assets || []).forEach(function (asset) {
+          count += Number(asset.download_count) || 0;
+        });
+      });
+      $("cnt").textContent = count.toLocaleString();
+    })
+    .catch(function () { $("cnt").textContent = "—"; });
+
+  function renderNews(items) {
+    var host = $("news");
+    host.textContent = "";
+    if (!items.length) {
+      var empty = document.createElement("div");
+      empty.className = "empty-state";
+      empty.textContent = "No project news has been published yet.";
+      host.appendChild(empty);
+      return;
+    }
+    items.forEach(function (item) {
+      var article = document.createElement("article");
+      article.className = "news-item";
+      var meta = document.createElement("div");
+      meta.className = "news-meta";
+      meta.textContent = [item.date, item.tag].filter(Boolean).join(" · ") || "Project update";
+      var title = document.createElement("h3");
+      title.textContent = item.title;
+      var body = document.createElement("p");
+      body.textContent = item.body || "";
+      article.appendChild(meta);
+      article.appendChild(title);
+      if (body.textContent) article.appendChild(body);
+      var url = safeUrl(item.url);
+      if (url) {
+        var link = document.createElement("a");
+        link.href = url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "Read more ↗";
+        article.appendChild(link);
+      }
+      host.appendChild(article);
+    });
+  }
+  getJSON(RAW + "news.json?t=" + Math.floor(Date.now() / 60000))
+    .then(function (data) {
+      var items = (Array.isArray(data.items) ? data.items : [])
+        .filter(function (item) { return item && typeof item.title === "string" && item.title.trim(); })
+        .sort(function (a, b) { return (b.date || "").localeCompare(a.date || ""); });
+      renderNews(items);
+    })
+    .catch(function () {
+      var host = $("news");
+      host.textContent = "";
+      var empty = document.createElement("div");
+      empty.className = "empty-state";
+      empty.textContent = "Project updates could not be loaded. Visit GitHub for the latest information.";
+      var link = document.createElement("a");
+      link.href = "https://github.com/" + REPO + "/releases";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = " View releases ↗";
+      empty.appendChild(link);
+      host.appendChild(empty);
+    });
+})();
+</script>
+</body>
+</html>

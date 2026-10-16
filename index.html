@@ -133,51 +133,6 @@ footer a:hover{color:var(--text)}
 @media(max-width:800px){.hero{padding:66px 0 52px}.hero-grid{grid-template-columns:1fr;gap:38px}.preview{max-width:620px}.feature-grid{grid-template-columns:repeat(2,1fr)}.release-card{grid-template-columns:1fr}.release-actions{flex-direction:row;flex-wrap:wrap}.release-actions .button{flex:1}.nav-links{gap:16px}}
 @media(max-width:560px){.container{width:min(var(--max),calc(100% - 28px))}.nav{height:64px}.brand{font-size:13px}.nav-links a:not(.nav-cta){display:none}.nav-cta{padding:9px 11px;font-size:12px}.hero{padding:55px 0 42px}h1{font-size:clamp(42px,13vw,60px)}.hero-copy{font-size:15px}.feature-grid,.news-list{grid-template-columns:1fr}.feature{min-height:0}.section{padding:52px 0}.release-card{padding:21px}.release-actions{flex-direction:column}.release-stats{gap:18px}.editor{font-size:10px;padding:17px 12px;grid-template-columns:30px 1fr}.line-numbers{padding-right:10px}.preview-footer{font-size:9px}.footer-row{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
-
-/* Documentation screen */
-.docs-section{padding-top:54px}
-.docs-heading{margin-bottom:24px}
-.docs-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
-.docs-tag{font:700 10px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.1em;color:var(--accent);border:1px solid rgba(140,245,199,.25);background:rgba(140,245,199,.06);border-radius:6px;padding:6px 9px}
-.docs-toolbar{display:flex;gap:10px;align-items:center;margin:0 0 18px;flex-wrap:wrap}
-.docs-search-wrap{display:flex;align-items:center;gap:10px;flex:1;min-width:200px;border:1px solid var(--line);border-radius:10px;padding:0 13px;background:var(--panel);color:var(--muted)}
-.docs-search-wrap input{width:100%;min-height:44px;border:0;outline:0;background:transparent;color:var(--text);font:inherit;font-size:13px}
-.docs-search-wrap input:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
-.docs-theme-toggle,.docs-download{min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:0 13px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--text);font:700 12px/1.4 inherit;cursor:pointer}
-.docs-download{color:var(--accent)}
-.docs-layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:18px;align-items:start}
-.docs-sidebar{position:sticky;top:91px;max-height:calc(100vh - 110px);overflow:auto;padding:13px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
-.docs-sidebar-title{padding:6px 9px 12px;color:var(--muted);font-size:9px;font-weight:850;letter-spacing:.16em}
-.docs-sidebar a{display:flex;align-items:flex-start;gap:9px;padding:9px;border-radius:8px;color:var(--muted);font-size:11px;line-height:1.45}
-.docs-sidebar a span{color:var(--accent);font:700 10px/1.6 ui-monospace,monospace}
-.docs-sidebar a:hover,.docs-sidebar a.active{background:rgba(140,245,199,.08);color:var(--text)}
-.docs-content{min-width:0}
-.docs-intro,.docs-article{border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(17,26,41,.72),rgba(12,17,27,.7));padding:24px;margin-bottom:14px}
-.docs-intro{border-color:#2a3b4d}
-.docs-intro-icon{font:800 10px/1.5 ui-monospace,monospace;letter-spacing:.14em;color:var(--accent)}
-.docs-intro p{margin:9px 0 0;color:var(--muted);font-size:13px}
-.docs-section-label{font:800 9px/1.4 ui-monospace,monospace;letter-spacing:.16em;color:var(--accent)}
-.docs-article h3{font-size:21px;line-height:1.25;letter-spacing:-.03em;margin:8px 0 18px}
-.docs-article p,.docs-article li{font-size:13px;color:var(--muted);line-height:1.8;overflow-wrap:anywhere}
-.docs-article p{margin:11px 0}
-.docs-article ul{padding-left:20px;margin:10px 0}
-.docs-article li{padding-left:3px;margin:4px 0}
-.docs-article a,.docs-footnote a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
-.docs-article pre{overflow:auto;background:#070b12;border:1px solid #263448;border-radius:9px;padding:15px;margin:13px 0;color:#cce3e5;font:12px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:4}
-.docs-table-wrap{overflow-x:auto;margin:14px 0}
-.docs-article table{width:100%;border-collapse:collapse;font-size:12px;min-width:300px}
-.docs-article th,.docs-article td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:10px 12px}
-.docs-article th{color:var(--text);font-size:10px;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.025)}
-.docs-article td{color:var(--muted);overflow-wrap:anywhere}
-.docs-no-results{padding:24px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:13px}
-.docs-footnote{font-size:11px;color:var(--muted);margin-top:18px}
-.docs-section.docs-light{--text:#172333;--muted:#526174;--line:#d9e1eb;--panel:#fff;--panel2:#f3f6fa;--bg:#f5f7fb;--accent:#087d58;--accent2:#087d9b}
-.docs-section.docs-light .docs-intro,.docs-section.docs-light .docs-article{background:#fff}
-.docs-section.docs-light .docs-article pre{background:#f1f5f9;color:#203044;border-color:#d9e1eb}
-.docs-section.docs-light .docs-article th{background:#f1f5f9}
-@media(max-width:800px){.docs-layout{grid-template-columns:1fr}.docs-sidebar{position:static;max-height:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}.docs-sidebar-title{grid-column:1/-1}.docs-sidebar a{font-size:10px}.docs-intro,.docs-article{padding:18px}}
-@media(max-width:560px){.docs-sidebar{grid-template-columns:1fr 1fr;padding:8px}.docs-toolbar>*{flex:1}.docs-search-wrap{flex-basis:100%}.docs-article h3{font-size:19px}.docs-article pre{font-size:11px;padding:12px}}
-
 </style>
 </head>
 <body>
@@ -190,7 +145,6 @@ footer a:hover{color:var(--text)}
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#updates">Updates</a>
-      <a href="#documentation">Docs</a>
       <a href="https://github.com/dechrisdera-svg/dechrismodcompiler/issues" target="_blank" rel="noopener noreferrer">Support ↗</a>
       <a class="nav-cta" href="#download">Get DMC <span aria-hidden="true">↗</span></a>
     </div>
@@ -205,7 +159,7 @@ footer a:hover{color:var(--text)}
         <h1>Build scripts.<br><span class="gradient-text">Keep moving.</span></h1>
         <p class="hero-copy">A focused workspace for GTA San Andreas CLEO scripts. Write, compile and inspect your scripts with less friction and a cleaner workflow.</p>
         <div class="actions">
-          <a class="button button-primary" href="#download">Download DMC <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="button button-primary" id="dl-hero" href="#download">Download DMC <span class="arrow" aria-hidden="true">↗</span></a>
           <a class="button button-secondary" href="https://github.com/dechrisdera-svg/dechrismodcompiler" target="_blank" rel="noopener noreferrer">Explore on GitHub</a>
         </div>
         <p class="hero-note"><strong>For Android CLEO and PC CLEO 4/5 workflows.</strong><br>Check release notes and compatibility before installing.</p>
@@ -280,181 +234,6 @@ footer a:hover{color:var(--text)}
       <div class="news-list" id="news" aria-live="polite"><div class="empty-state">Loading project updates…</div></div>
     </div>
   </section>
-
-<section class="section docs-section" id="documentation">
- <div class="container">
-  <div class="section-head docs-heading">
-   <div class="kicker">DMC knowledge base</div>
-   <h2>Documentation.</h2>
-   <p>Installation, scripting syntax, shortcuts and troubleshooting — organized in one searchable guide.</p>
-   <div class="docs-meta"><span class="docs-tag">DMC v2.1.1</span><span class="docs-tag">BETA</span><span class="docs-tag">WINDOWS</span></div>
-  </div>
-  <div class="docs-toolbar">
-   <label class="docs-search-wrap"><span aria-hidden="true">⌕</span><input id="docs-search" type="search" placeholder="Search documentation…" aria-label="Search documentation"></label>
-   <button class="docs-theme-toggle" id="docs-theme-toggle" type="button" aria-pressed="false">☼ Light mode</button>
-   <a class="docs-download" href="https://github.com/dechrisdera-svg/dechrismodcompiler" target="_blank" rel="noopener noreferrer">Repository ↗</a>
-  </div>
-  <div class="docs-layout">
-   <aside class="docs-sidebar" aria-label="Documentation contents"><div class="docs-sidebar-title">ON THIS PAGE</div>
-    <a href="#docs-1" data-doc-link="1"><span>01</span>What Is Dmc</a><a href="#docs-2" data-doc-link="2"><span>02</span>Install</a><a href="#docs-3" data-doc-link="3"><span>03</span>Quick Start</a><a href="#docs-4" data-doc-link="4"><span>04</span>Language Guide</a><a href="#docs-5" data-doc-link="5"><span>05</span>Shortcuts</a><a href="#docs-6" data-doc-link="6"><span>06</span>Command Line</a><a href="#docs-7" data-doc-link="7"><span>07</span>Settings</a><a href="#docs-8" data-doc-link="8"><span>08</span>Troubleshooting</a><a href="#docs-9" data-doc-link="9"><span>09</span>Updates, News And Ad Banner</a><a href="#docs-10" data-doc-link="10"><span>10</span>Maintainer Guide (Repo Owner Only)</a><a href="#docs-11" data-doc-link="11"><span>11</span>Status And Limits (Be Honest On The Site)</a><a href="#docs-12" data-doc-link="12"><span>12</span>Links</a>
-   </aside>
-   <div class="docs-content" id="docs-content">
-    <div class="docs-intro"><span class="docs-intro-icon">DMC / DOCS</span><p>Official project guide for DechrisModCompiler. Use the section list to jump to a topic, or search across the documentation.</p></div>
-    <article class="docs-article" id="docs-1" data-search="what is dmc dechrismodcompiler (dmc) is a script editor and compiler for gta san andreas cleo scripts. you write a script as plain text, press one key, and dmc produces the compiled file that cleo runs in the game.  targets     gta sa android 2.00      cleo android        output .csi / .csa / .cs     gta sa pc                cleo 4              output .cs     gta sa pc                cleo 5              output .cs / .csi  main features - editor with syntax highlighting, 3 themes, per-token colors, tabs, session restore, drag and drop. - autocomplete, parameter hints, hover help and opcode search. - live error checking while you type (red squiggles and a problems list). all errors are shown at once, with &quot;did you mean&quot; suggestions. - compile with f6. compile + send to phone (adb) or copy to the pc game with f5. - decompiler: open any compiled .csi / .csa / .cs / .cm as readable source. the result is checked by recompiling it to identical bytes. - hex view of the compiled output. - find / replace, find in files, go to definition, find all references, rename. - code folding, minimap, bracket matching, auto-format, snippets. - variable inspector (hover and outline panel). - command-line mode. - automatic updates, a news window and a small ad banner (see section 9). "><div class="docs-section-label">SECTION 01</div><h3>What Is Dmc</h3><p>DechrisModCompiler (DMC) is a script editor and compiler for GTA San Andreas CLEO scripts. You write a script as plain text, press one key, and DMC produces the compiled file that CLEO runs in the game.</p>
-<p>Targets</p>
-<pre><code>GTA SA Android 2.00      CLEO Android        output .csi / .csa / .cs
-GTA SA PC                CLEO 4              output .cs
-GTA SA PC                CLEO 5              output .cs / .csi</code></pre>
-<p>Main features</p>
-<ul><li>Editor with syntax highlighting, 3 themes, per-token colors, tabs, session restore, drag and drop.</li><li>Autocomplete, parameter hints, hover help and opcode search.</li><li>Live error checking while you type (red squiggles and a Problems list). All errors are shown at once, with &quot;did you mean&quot; suggestions.</li><li>Compile with F6. Compile + send to phone (ADB) or copy to the PC game with F5.</li><li>Decompiler: open any compiled .csi / .csa / .cs / .cm as readable source. The result is checked by recompiling it to identical bytes.</li><li>Hex view of the compiled output.</li><li>Find / replace, find in files, go to definition, find all references, rename.</li><li>Code folding, minimap, bracket matching, auto-format, snippets.</li><li>Variable inspector (hover and Outline panel).</li><li>Command-line mode.</li><li>Automatic updates, a News window and a small ad banner (see section 9).</li></ul></article>
-<article class="docs-article" id="docs-2" data-search="install 1. download dmc_setup.exe from the website (download button) or from github releases. 2. run it. windows may show &quot;unknown publisher&quot; because the installer is not code-signed: choose more info, then run anyway. 3. start dmc from the start menu or desktop shortcut.  where dmc keeps its data     %appdata%\dechrismodcompiler this folder holds settings, the last session, downloaded opcode libraries, cached news and the log file dmc.log. if something goes wrong, dmc.log is the file to send when you report a bug.  pc targets need the gta sa pc opcode library. dmc offers to download it the first time (tools &gt; library manager). the android library is bundled. "><div class="docs-section-label">SECTION 02</div><h3>Install</h3><p>1. Download DMC_Setup.exe from the website (Download button) or from GitHub Releases. 2. Run it. Windows may show &quot;unknown publisher&quot; because the installer is not code-signed: choose More info, then Run anyway. 3. Start DMC from the Start menu or desktop shortcut.</p>
-<p>Where DMC keeps its data</p>
-<pre><code>%APPDATA%\DechrisModCompiler</code></pre>
-<p>This folder holds settings, the last session, downloaded opcode libraries, cached news and the log file dmc.log. If something goes wrong, dmc.log is the file to send when you report a bug.</p>
-<p>PC targets need the GTA SA PC opcode library. DMC offers to download it the first time (Tools &gt; Library manager). The Android library is bundled.</p></article>
-<article class="docs-article" id="docs-3" data-search="quick start 1. press new. choose the target in the toolbar (gta sa android 2.00, cleo 4 or cleo 5). 2. type or paste a script, for example:      {$cleo .csi}     script_name &#x27;hello&#x27;      wait 1000     while true         wait 0         if player.isplaying(0) then             char.giveweapon(player.getchar(0), 24, 100)             terminate_this_script         end     end  3. press f6. the compiled file is written next to the script (or to the output folder set in tools &gt; settings). 4. android: connect the phone with usb debugging on and press f5. dmc copies the .csi into the cleo folder.    pc: press f5 to copy the file to the game&#x27;s cleo folder. 5. start the game. cleo loads the script.  to read a compiled script: build &gt; decompile (ctrl+shift+d) or drag the file into dmc. "><div class="docs-section-label">SECTION 03</div><h3>Quick Start</h3><p>1. Press New. Choose the target in the toolbar (GTA SA Android 2.00, CLEO 4 or CLEO 5). 2. Type or paste a script, for example:</p>
-<pre><code>{$CLEO .csi}
-script_name &#x27;HELLO&#x27;
-
-wait 1000
-while true
-    wait 0
-    if Player.IsPlaying(0) then
-        Char.GiveWeapon(Player.GetChar(0), 24, 100)
-        terminate_this_script
-    end
-end</code></pre>
-<p>3. Press F6. The compiled file is written next to the script (or to the output folder set in Tools &gt; Settings). 4. Android: connect the phone with USB debugging on and press F5. DMC copies the .csi into the CLEO folder. PC: press F5 to copy the file to the game&#x27;s CLEO folder. 5. Start the game. CLEO loads the script.</p>
-<p>To read a compiled script: Build &gt; Decompile (Ctrl+Shift+D) or drag the file into DMC.</p></article>
-<article class="docs-article" id="docs-4" data-search="language guide dmc uses sanny builder 4 style syntax. old v1 scripts still compile to identical bytes.  directives     {$cleo .csi}               output extension (the target default is used if omitted)     {$include file.txt}        include another file     {$include_once file.txt}   include only once     {$globals 5000}            base index for named globals ($name)  script header     script_name &#x27;name&#x27;     wait 0     0ab1: 1 2 3                raw opcode form  comments     // line comment     /* block comment */  variables     0@ 1@ ... 31@              local variables (32@ and 33@ are the timers timera / timerb)     $123                       global variable by number     int a, b = 3               named variables     float f = 1.5     char ped                   class-typed variable (allows ped.isdead())     int arr[10]                array, use arr[i] = 5     const size = 10            constant     var $g: int                type hint for a global     var 5@: float              type hint for a numbered local  assignments     a = 5     a += 2     a -= b     a *= 2.0     a /= 2     f =# i                     converts between int and float     c = a + b                  one operator only; use a temp variable for longer expressions  commands     class.member(args)     x y z = char.getcoordinates(ped)       outputs go on the left     not char.isdead(ped)  conditions     a &gt; b    a &gt;= b    a &lt; b    a &lt;= b    a == b    a != b     (the operator &lt;&gt; is not supported. use != or test with == and jf.)  control flow     if cond then ... else ... end     if and / if or      conditions on the following lines, then ... end     while cond ... end     while true ... end     repeat ... until cond     for i = 0 to 9 [step 2] ... end     for i = 9 downto 0 ... end     break     continue  old style (still works)     if       cond     jf @label     :label     jump @label     gosub @label     return     terminate_this_script  raw bytes     hex 4e 00 end  not supported in this version - switch / case, functions with return values, import / export - enums files and model names written as #name (use numbers) - mission and external script labels, gta iii / vice city targets "><div class="docs-section-label">SECTION 04</div><h3>Language Guide</h3><p>DMC uses Sanny Builder 4 style syntax. Old v1 scripts still compile to identical bytes.</p>
-<p>Directives</p>
-<pre><code>{$CLEO .csi}               output extension (the target default is used if omitted)
-{$INCLUDE file.txt}        include another file
-{$INCLUDE_ONCE file.txt}   include only once
-{$GLOBALS 5000}            base index for named globals ($name)</code></pre>
-<p>Script header</p>
-<pre><code>script_name &#x27;NAME&#x27;
-wait 0
-0AB1: 1 2 3                raw opcode form</code></pre>
-<p>Comments</p>
-<pre><code>// line comment
-/* block comment */</code></pre>
-<p>Variables</p>
-<pre><code>0@ 1@ ... 31@              local variables (32@ and 33@ are the timers TIMERA / TIMERB)
-$123                       global variable by number
-int a, b = 3               named variables
-float f = 1.5
-Char ped                   class-typed variable (allows ped.IsDead())
-int arr[10]                array, use arr[i] = 5
-const SIZE = 10            constant
-var $g: int                type hint for a global
-var 5@: float              type hint for a numbered local</code></pre>
-<p>Assignments</p>
-<pre><code>a = 5     a += 2     a -= b     a *= 2.0     a /= 2
-f =# i                     converts between int and float
-c = a + b                  one operator only; use a temp variable for longer expressions</code></pre>
-<p>Commands</p>
-<pre><code>Class.Member(args)
-x y z = Char.GetCoordinates(ped)       outputs go on the left
-not Char.IsDead(ped)</code></pre>
-<p>Conditions</p>
-<pre><code>a &gt; b    a &gt;= b    a &lt; b    a &lt;= b    a == b    a != b
-(The operator &lt;&gt; is NOT supported. Use != or test with == and jf.)</code></pre>
-<p>Control flow</p>
-<pre><code>if cond then ... else ... end
-if and / if or      conditions on the following lines, then ... end
-while cond ... end
-while true ... end
-repeat ... until cond
-for i = 0 to 9 [step 2] ... end
-for i = 9 downto 0 ... end
-break
-continue</code></pre>
-<p>Old style (still works)</p>
-<pre><code>if
-  cond
-jf @LABEL
-:LABEL
-jump @LABEL
-gosub @LABEL
-return
-terminate_this_script</code></pre>
-<p>Raw bytes</p>
-<pre><code>hex 4E 00 end</code></pre>
-<p>Not supported in this version</p>
-<ul><li>switch / case, functions with return values, import / export</li><li>Enums files and model names written as #NAME (use numbers)</li><li>Mission and external script labels, GTA III / Vice City targets</li></ul></article>
-<article class="docs-article" id="docs-5" data-search="shortcuts shortcut | action f6 | compile f5 | compile and push to phone (adb) or copy to the pc game ctrl+shift+b | compile all open tabs ctrl+n / ctrl+o | new / open ctrl+s / ctrl+shift+s | save / save as ctrl+w | close tab ctrl+tab / ctrl+shift+tab | next / previous tab ctrl+f / ctrl+h | find / replace ctrl+shift+f | find in files ctrl+g | go to line f12 or ctrl+click | go to definition (label, variable, constant) shift+f12 | find all references f2 | rename label / variable ctrl+/ | comment toggle tab / shift+tab | indent / dedent ctrl+space | autocomplete ctrl+shift+i | auto-format document ctrl+= / ctrl+- / ctrl+0 | zoom in / out / reset ctrl+shift+[ and ] | fold / unfold all ctrl+b | toggle side panel ctrl+shift+d | decompile a compiled script (.csi / .csa / .cs / .cm)  snippets: type a snippet name (main, loop, weapon, cheat, for ...) then press tab. "><div class="docs-section-label">SECTION 05</div><h3>Shortcuts</h3><div class="docs-table-wrap"><table><thead><tr><th>Shortcut</th><th>Action</th></tr></thead><tbody><tr><td>F6</td><td>Compile</td></tr><tr><td>F5</td><td>Compile and push to phone (ADB) or copy to the PC game</td></tr><tr><td>Ctrl+Shift+B</td><td>Compile all open tabs</td></tr><tr><td>Ctrl+N / Ctrl+O</td><td>New / Open</td></tr><tr><td>Ctrl+S / Ctrl+Shift+S</td><td>Save / Save as</td></tr><tr><td>Ctrl+W</td><td>Close tab</td></tr><tr><td>Ctrl+Tab / Ctrl+Shift+Tab</td><td>Next / previous tab</td></tr><tr><td>Ctrl+F / Ctrl+H</td><td>Find / Replace</td></tr><tr><td>Ctrl+Shift+F</td><td>Find in files</td></tr><tr><td>Ctrl+G</td><td>Go to line</td></tr><tr><td>F12 or Ctrl+Click</td><td>Go to definition (label, variable, constant)</td></tr><tr><td>Shift+F12</td><td>Find all references</td></tr><tr><td>F2</td><td>Rename label / variable</td></tr><tr><td>Ctrl+/</td><td>Comment toggle</td></tr><tr><td>Tab / Shift+Tab</td><td>Indent / dedent</td></tr><tr><td>Ctrl+Space</td><td>Autocomplete</td></tr><tr><td>Ctrl+Shift+I</td><td>Auto-format document</td></tr><tr><td>Ctrl+= / Ctrl+- / Ctrl+0</td><td>Zoom in / out / reset</td></tr><tr><td>Ctrl+Shift+[ and ]</td><td>Fold / unfold all</td></tr><tr><td>Ctrl+B</td><td>Toggle side panel</td></tr><tr><td>Ctrl+Shift+D</td><td>Decompile a compiled script (.csi / .csa / .cs / .cm)</td></tr></tbody></table></div>
-<p>Snippets: type a snippet name (main, loop, weapon, cheat, for ...) then press Tab.</p></article>
-<article class="docs-article" id="docs-6" data-search="command line     dmc.exe script.txt [-o out.csi] [--target sa_android|sa_cleo4|sa_cleo5]     dmc.exe --decompile file.csi [-o out.txt]     dmc.exe --disasm file.csi     dmc.exe --update-libs  exit codes     0   success     1   the script has errors     2   usage, file or library problem "><div class="docs-section-label">SECTION 06</div><h3>Command Line</h3><pre><code>DMC.exe script.txt [-o out.csi] [--target sa_android|sa_cleo4|sa_cleo5]
-DMC.exe --decompile file.csi [-o out.txt]
-DMC.exe --disasm file.csi
-DMC.exe --update-libs</code></pre>
-<p>Exit codes</p>
-<pre><code>0   success
-1   the script has errors
-2   usage, file or library problem</code></pre></article>
-<article class="docs-article" id="docs-7" data-search="settings open tools &gt; settings. - theme (3 built-in) and per-token colors. - word wrap, minimap, live error checking while typing. - reopen last session on start. - output folder. - download updates automatically (you choose when to install). "><div class="docs-section-label">SECTION 07</div><h3>Settings</h3><p>Open Tools &gt; Settings.</p>
-<ul><li>Theme (3 built-in) and per-token colors.</li><li>Word wrap, minimap, live error checking while typing.</li><li>Reopen last session on start.</li><li>Output folder.</li><li>Download updates automatically (you choose when to install).</li></ul></article>
-<article class="docs-article" id="docs-8" data-search="troubleshooting problem | what to do windows says &quot;unknown publisher&quot; | the installer is not code-signed. choose more info, then run anyway. pc target asks for a library | let dmc download it (needs internet once), or use tools &gt; library manager. f5 does nothing on android | turn on usb debugging, connect the phone, accept the prompt on the phone, make sure adb is available. &quot;cannot understand: ...&quot; error | a line uses unsupported syntax, for example the &lt;&gt; operator. see section 4. script compiles but does not work in game | dmc only checks bytes and syntax, it cannot run the game. check the opcode arguments, then test in game. anything unexpected | send %appdata%\dechrismodcompiler\dmc.log with your script on github issues. "><div class="docs-section-label">SECTION 08</div><h3>Troubleshooting</h3><div class="docs-table-wrap"><table><thead><tr><th>Problem</th><th>What to do</th></tr></thead><tbody><tr><td>Windows says &quot;unknown publisher&quot;</td><td>The installer is not code-signed. Choose More info, then Run anyway.</td></tr><tr><td>PC target asks for a library</td><td>Let DMC download it (needs internet once), or use Tools &gt; Library manager.</td></tr><tr><td>F5 does nothing on Android</td><td>Turn on USB debugging, connect the phone, accept the prompt on the phone, make sure adb is available.</td></tr><tr><td>&quot;Cannot understand: ...&quot; error</td><td>A line uses unsupported syntax, for example the &lt;&gt; operator. See section 4.</td></tr><tr><td>Script compiles but does not work in game</td><td>DMC only checks bytes and syntax, it cannot run the game. Check the opcode arguments, then test in game.</td></tr><tr><td>Anything unexpected</td><td>Send %APPDATA%\DechrisModCompiler\dmc.log with your script on GitHub Issues.</td></tr></tbody></table></div></article>
-<article class="docs-article" id="docs-9" data-search="updates, news and ad banner auto-update - on start dmc reads latest.json from the github repo. - if a newer version exists, dmc downloads the installer in the background. - it checks the file size, the sha-256 hash and a release signature. a file that fails the check is deleted and your install is left untouched. - a popup then offers install now or remind me later. it comes back every 20 minutes until you install, and a status-bar link stays visible. - install now saves your open tabs, runs the installer silently and restarts dmc. - turn automatic downloads off in tools &gt; settings.  news - help &gt; news shows messages from news.json in the repo. the status bar shows how many are unread. - the website shows the same news list.  ad banner - a thin strip under the status bar shows messages from app.json. it has a fixed height, never covers or moves any button, and rotates through the items. - clicking an item opens its link.  privacy - dmc only downloads these files. it sends no personal data. the only thing a request carries is the program name and version. "><div class="docs-section-label">SECTION 09</div><h3>Updates, News And Ad Banner</h3><p>Auto-update</p>
-<ul><li>On start DMC reads latest.json from the GitHub repo.</li><li>If a newer version exists, DMC downloads the installer in the background.</li><li>It checks the file size, the SHA-256 hash and a release signature. A file that fails the check is deleted and your install is left untouched.</li><li>A popup then offers Install now or Remind me later. It comes back every 20 minutes until you install, and a status-bar link stays visible.</li><li>Install now saves your open tabs, runs the installer silently and restarts DMC.</li><li>Turn automatic downloads off in Tools &gt; Settings.</li></ul>
-<p>News</p>
-<ul><li>Help &gt; News shows messages from news.json in the repo. The status bar shows how many are unread.</li><li>The website shows the same news list.</li></ul>
-<p>Ad banner</p>
-<ul><li>A thin strip under the status bar shows messages from app.json. It has a fixed height, never covers or moves any button, and rotates through the items.</li><li>Clicking an item opens its link.</li></ul>
-<p>Privacy</p>
-<ul><li>DMC only downloads these files. It sends no personal data. The only thing a request carries is the program name and version.</li></ul></article>
-<article class="docs-article" id="docs-10" data-search="maintainer guide (repo owner only) releasing a new version 1. change the version in dmc/__init__.py and add a section at the top of changelog.txt. 2. run build.bat. it runs the tests, builds the installer and creates latest.json automatically. 3. commit latest.json. create a github release tagged v&lt;version&gt; and attach installer_output\dmc_setup.exe.    (make_latest.bat recreates latest.json without rebuilding.)  latest.json (generated, do not edit by hand)     {       &quot;schema&quot;: 1,       &quot;version&quot;: &quot;2.1.1&quot;,       &quot;date&quot;: &quot;2026-10-14&quot;,       &quot;url&quot;: &quot;https://github.com/dechrisdera-svg/dechrismodcompiler/releases/download/v2.1.1/dmc_setup.exe&quot;,       &quot;size&quot;: 12345678,       &quot;sha256&quot;: &quot;&lt;64 hex characters&gt;&quot;,       &quot;sig&quot;: &quot;&lt;signature&gt;&quot;,       &quot;notes&quot;: [&quot;new ...&quot;, &quot;fix ...&quot;]     }  news.json (edit freely, any number of items, newest date first in the app)     {       &quot;schema&quot;: 1,       &quot;items&quot;: [         {           &quot;id&quot;: &quot;2026-10-14-example&quot;,           &quot;date&quot;: &quot;2026-10-14&quot;,           &quot;tag&quot;: &quot;update&quot;,           &quot;title&quot;: &quot;headline&quot;,           &quot;body&quot;: &quot;text of the message.&quot;,           &quot;url&quot;: &quot;https://example.com&quot;         }       ]     } each item needs a unique &quot;id&quot; and a &quot;title&quot;. &quot;tag&quot;, &quot;body&quot; and &quot;url&quot; are optional. keep the commas and quotes valid or the file is ignored.  app.json (ad banner)     {       &quot;schema&quot;: 1,       &quot;ads&quot;: {         &quot;enabled&quot;: true,         &quot;rotate_seconds&quot;: 25,         &quot;items&quot;: [           { &quot;id&quot;: &quot;ad1&quot;, &quot;text&quot;: &quot;banner text&quot;, &quot;url&quot;: &quot;https://example.com&quot;,             &quot;bg&quot;: &quot;#1b3a5c&quot;, &quot;fg&quot;: &quot;#ffffff&quot; }         ]       }     } set &quot;enabled&quot; to false to hide the banner for everyone.  signature - every release is signed with a key made from the shared dechris password (the password itself is never stored or published). - an app built with a different password produces a different key, so its update fails the check and is thrown away. - limit: the key has to be inside the program, so this stops mix-ups and casual tampering, not a determined attacker. "><div class="docs-section-label">SECTION 10</div><h3>Maintainer Guide (Repo Owner Only)</h3><p>Releasing a new version 1. Change the version in dmc/__init__.py and add a section at the top of CHANGELOG.txt. 2. Run build.bat. It runs the tests, builds the installer and creates latest.json automatically. 3. Commit latest.json. Create a GitHub release tagged v&lt;version&gt; and attach installer_output\DMC_Setup.exe. (make_latest.bat recreates latest.json without rebuilding.)</p>
-<p>latest.json (generated, do not edit by hand)</p>
-<pre><code>{
-  &quot;schema&quot;: 1,
-  &quot;version&quot;: &quot;2.1.1&quot;,
-  &quot;date&quot;: &quot;2026-10-14&quot;,
-  &quot;url&quot;: &quot;https://github.com/dechrisdera-svg/dechrismodcompiler/releases/download/v2.1.1/DMC_Setup.exe&quot;,
-  &quot;size&quot;: 12345678,
-  &quot;sha256&quot;: &quot;&lt;64 hex characters&gt;&quot;,
-  &quot;sig&quot;: &quot;&lt;signature&gt;&quot;,
-  &quot;notes&quot;: [&quot;NEW ...&quot;, &quot;FIX ...&quot;]
-}</code></pre>
-<p>news.json (edit freely, any number of items, newest date first in the app)</p>
-<pre><code>{
-  &quot;schema&quot;: 1,
-  &quot;items&quot;: [
-    {
-      &quot;id&quot;: &quot;2026-10-14-example&quot;,
-      &quot;date&quot;: &quot;2026-10-14&quot;,
-      &quot;tag&quot;: &quot;update&quot;,
-      &quot;title&quot;: &quot;Headline&quot;,
-      &quot;body&quot;: &quot;Text of the message.&quot;,
-      &quot;url&quot;: &quot;https://example.com&quot;
-    }
-  ]
-}</code></pre>
-<p>Each item needs a unique &quot;id&quot; and a &quot;title&quot;. &quot;tag&quot;, &quot;body&quot; and &quot;url&quot; are optional. Keep the commas and quotes valid or the file is ignored.</p>
-<p>app.json (ad banner)</p>
-<pre><code>{
-  &quot;schema&quot;: 1,
-  &quot;ads&quot;: {
-    &quot;enabled&quot;: true,
-    &quot;rotate_seconds&quot;: 25,
-    &quot;items&quot;: [
-      { &quot;id&quot;: &quot;ad1&quot;, &quot;text&quot;: &quot;Banner text&quot;, &quot;url&quot;: &quot;https://example.com&quot;,
-        &quot;bg&quot;: &quot;#1b3a5c&quot;, &quot;fg&quot;: &quot;#ffffff&quot; }
-    ]
-  }
-}</code></pre>
-<p>Set &quot;enabled&quot; to false to hide the banner for everyone.</p>
-<p>Signature</p>
-<ul><li>Every release is signed with a key made from the shared Dechris password (the password itself is never stored or published).</li><li>An app built with a different password produces a different key, so its update fails the check and is thrown away.</li><li>Limit: the key has to be inside the program, so this stops mix-ups and casual tampering, not a determined attacker.</li></ul></article>
-<article class="docs-article" id="docs-11" data-search="status and limits (be honest on the site) - dmc is a beta. the compiler, decompiler, update checker and parsing are covered by automated tests (87 tests). - the windows window, installer and in-game results depend on your system and game and were not all tested on real hardware. report anything odd. - pc cleo 4 / cleo 5 output compiles with the same rules as android but has not been confirmed in a real game. - dmc does not include a game debugger or memory tools. - opcode data comes from the sanny builder library. "><div class="docs-section-label">SECTION 11</div><h3>Status And Limits (Be Honest On The Site)</h3><ul><li>DMC is a beta. The compiler, decompiler, update checker and parsing are covered by automated tests (87 tests).</li><li>The Windows window, installer and in-game results depend on your system and game and were not all tested on real hardware. Report anything odd.</li><li>PC CLEO 4 / CLEO 5 output compiles with the same rules as Android but has not been confirmed in a real game.</li><li>DMC does not include a game debugger or memory tools.</li><li>Opcode data comes from the Sanny Builder Library.</li></ul></article>
-<article class="docs-article" id="docs-12" data-search="links source code:  https://github.com/dechrisdera-svg/dechrismodcompiler releases:     https://github.com/dechrisdera-svg/dechrismodcompiler/releases bug reports:  https://github.com/dechrisdera-svg/dechrismodcompiler/issues"><div class="docs-section-label">SECTION 12</div><h3>Links</h3><p>Source code:  <a href="https://github.com/dechrisdera-svg/dechrismodcompiler" target="_blank" rel="noopener noreferrer">https://github.com/dechrisdera-svg/dechrismodcompiler</a> Releases:     <a href="https://github.com/dechrisdera-svg/dechrismodcompiler/releases" target="_blank" rel="noopener noreferrer">https://github.com/dechrisdera-svg/dechrismodcompiler/releases</a> Bug reports:  <a href="https://github.com/dechrisdera-svg/dechrismodcompiler/issues" target="_blank" rel="noopener noreferrer">https://github.com/dechrisdera-svg/dechrismodcompiler/issues</a></p></article>
-    <div class="docs-no-results" id="docs-no-results" hidden>No matching documentation sections. Try a different search term.</div>
-   </div>
-  </div>
-  <p class="docs-footnote">Documentation source: DMC project guide · <a href="https://github.com/dechrisdera-svg/dechrismodcompiler/issues" target="_blank" rel="noopener noreferrer">Report documentation issues ↗</a></p>
- </div>
-</section>
-
 </main>
 
 <footer>
@@ -502,21 +281,45 @@ DMC.exe --update-libs</code></pre>
       $("dl").href = validUrl;
       $("dl").innerHTML = 'Download for Windows <span aria-hidden="true">↗</span>';
       $("dl").setAttribute("target", "_blank");
+      var hero = $("dl-hero");
+      if (hero) { hero.href = validUrl; hero.setAttribute("target", "_blank"); hero.setAttribute("rel", "noopener noreferrer"); }
       $("release-message").textContent = "The latest Windows installer is ready from GitHub.";
     } else {
       $("release-message").textContent = "No direct Windows installer was found. Open the release page to see available files.";
     }
   }
 
+  function pickAsset(assets) {
+    var list = (Array.isArray(assets) ? assets : []).filter(function (a) { return a && a.browser_download_url; });
+    var rank = [/\.exe$/i, /\.msi$/i, /(setup|install).*\.zip$/i, /\.zip$/i];
+    for (var i = 0; i < rank.length; i++) {
+      var hit = list.find(function (a) { return rank[i].test(a.name || ""); });
+      if (hit) return hit;
+    }
+    return list[0] || null;
+  }
+
+  // One request for every release (includes pre-releases, which /releases/latest ignores)
+  var releasesPromise = getJSON("https://api.github.com/repos/" + REPO + "/releases?per_page=100")
+    .then(function (r) { return Array.isArray(r) ? r : []; })
+    .catch(function () { return []; });
+
   getJSON(RAW + "latest.json?t=" + Math.floor(Date.now() / 60000))
     .then(function (data) {
+      if (!data || !safeUrl(data.url)) throw new Error("latest.json has no usable url");
       displayRelease(data.version, data.url, data.size, data.date);
     })
     .catch(function () {
-      return getJSON("https://api.github.com/repos/" + REPO + "/releases/latest").then(function (release) {
-        var assets = Array.isArray(release.assets) ? release.assets : [];
-        var asset = assets.find(function (item) { return /\.exe$/i.test(item.name || ""); });
-        displayRelease((release.tag_name || "").replace(/^v/i, ""), asset && asset.browser_download_url, asset && asset.size, (release.published_at || "").slice(0, 10));
+      return releasesPromise.then(function (releases) {
+        var published = releases.filter(function (r) { return r && !r.draft; });
+        if (!published.length) throw new Error("no releases");
+        var chosen = null, asset = null;
+        for (var i = 0; i < published.length && !asset; i++) {
+          asset = pickAsset(published[i].assets);
+          chosen = published[i];
+        }
+        if (!asset) chosen = published[0];
+        displayRelease((chosen.tag_name || "").replace(/^v/i, ""), asset && asset.browser_download_url, asset && asset.size, (chosen.published_at || "").slice(0, 10));
       });
     })
     .catch(function () {
@@ -525,17 +328,15 @@ DMC.exe --update-libs</code></pre>
       $("release-message").textContent = "Release details could not be loaded right now. You can still open GitHub and download a release manually.";
     });
 
-  getJSON("https://api.github.com/repos/" + REPO + "/releases?per_page=100")
-    .then(function (releases) {
-      var count = 0;
-      (Array.isArray(releases) ? releases : []).forEach(function (release) {
-        (release.assets || []).forEach(function (asset) {
-          count += Number(asset.download_count) || 0;
-        });
+  releasesPromise.then(function (releases) {
+    var count = 0;
+    releases.forEach(function (release) {
+      (release.assets || []).forEach(function (asset) {
+        count += Number(asset.download_count) || 0;
       });
-      $("cnt").textContent = count.toLocaleString();
-    })
-    .catch(function () { $("cnt").textContent = "—"; });
+    });
+    $("cnt").textContent = count.toLocaleString();
+  });
 
   function renderNews(items) {
     var host = $("news");
@@ -572,39 +373,6 @@ DMC.exe --update-libs</code></pre>
       host.appendChild(article);
     });
   }
-
-  // Documentation search, section navigation and independent light/dark reading mode.
-  var docsSearch = $("docs-search");
-  var docsArticles = Array.prototype.slice.call(document.querySelectorAll(".docs-article"));
-  var docsLinks = Array.prototype.slice.call(document.querySelectorAll("[data-doc-link]"));
-  var docsNoResults = $("docs-no-results");
-  if (docsSearch) {
-    docsSearch.addEventListener("input", function () {
-      var q = docsSearch.value.trim().toLowerCase();
-      var visible = 0;
-      docsArticles.forEach(function (article) {
-        var show = !q || (article.textContent + " " + article.getAttribute("data-search")).toLowerCase().indexOf(q) !== -1;
-        article.hidden = !show;
-        if (show) visible++;
-      });
-      docsLinks.forEach(function (link) {
-        var target = document.getElementById("docs-" + link.getAttribute("data-doc-link"));
-        link.hidden = !!(q && target && target.hidden);
-      });
-      docsNoResults.hidden = visible !== 0;
-    });
-  }
-  var docsThemeButton = $("docs-theme-toggle");
-  var docsSection = document.querySelector(".docs-section");
-  if (docsThemeButton && docsSection) {
-    docsThemeButton.addEventListener("click", function () {
-      var light = docsSection.classList.toggle("docs-light");
-      docsThemeButton.textContent = light ? "☾ Dark mode" : "☼ Light mode";
-      docsThemeButton.setAttribute("aria-pressed", light ? "true" : "false");
-    });
-  }
-
-
   getJSON(RAW + "news.json?t=" + Math.floor(Date.now() / 60000))
     .then(function (data) {
       var items = (Array.isArray(data.items) ? data.items : [])
